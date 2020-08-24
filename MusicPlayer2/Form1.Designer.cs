@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBoxSongs = new System.Windows.Forms.ListBox();
             this.btnSelectSongs = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.BtnStop = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.SongSlider = new System.Windows.Forms.TrackBar();
+            this.SongTimer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.SongSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxSongs
@@ -97,11 +102,37 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // SongSlider
+            // 
+            this.SongSlider.Location = new System.Drawing.Point(12, 246);
+            this.SongSlider.Maximum = 255;
+            this.SongSlider.Name = "SongSlider";
+            this.SongSlider.Size = new System.Drawing.Size(280, 45);
+            this.SongSlider.TabIndex = 8;
+            this.SongSlider.TickStyle = System.Windows.Forms.TickStyle.None;
+            // 
+            // SongTimer
+            // 
+            this.SongTimer.Interval = 50;
+            this.SongTimer.Tick += new System.EventHandler(this.SongTimer_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(108, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "00 : 00 : 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 254);
+            this.ClientSize = new System.Drawing.Size(420, 305);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.SongSlider);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.BtnStop);
             this.Controls.Add(this.btnPlay);
@@ -111,7 +142,9 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "MusicPlayer";
+            ((System.ComponentModel.ISupportInitialize)(this.SongSlider)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,6 +155,9 @@
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button BtnStop;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TrackBar SongSlider;
+        private System.Windows.Forms.Timer SongTimer;
+        private System.Windows.Forms.Label label1;
     }
 }
 
